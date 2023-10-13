@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :comments
   resources :photos
 
+  get ":username/liked" => "photos#liked", as: :liked_photos
+  # TODO
+  # get ":username/feed"
+  # get ":username/followers"
+  # get ":username/following"
   # Must be at end
   get "/:username" => "users#show", as: :user
 end
